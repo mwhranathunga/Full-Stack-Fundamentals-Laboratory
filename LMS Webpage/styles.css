@@ -1,10 +1,14 @@
-/* Base Styles */
+/* ==========================================================
+   Base Styles
+   ========================================================== */
 body {
     background: white;
     color: black;
 }
 
-/* Navbar Section */
+/* ==========================================================
+   Navbar Section
+   ========================================================== */
 .custom-navbar {
     background-color: var(--bs-primary, #0967f3);
 }
@@ -17,7 +21,9 @@ body {
     justify-content: space-between;
 }
 
-/* Hero Section */
+/* ==========================================================
+   Hero Section (Home)
+   ========================================================== */
 .hero-section {
     background: rgb(233, 235, 238);
     min-height: 320px;
@@ -27,7 +33,9 @@ body {
     color: rgb(112, 119, 119);
 }
 
-/* Features Section */
+/* ==========================================================
+   Features Section (Home)
+   ========================================================== */
 .features {
     padding: 60px 0;
 }
@@ -57,9 +65,9 @@ body {
     max-width: 300px;
 }
 
-
-
-/* Courses Section & Cards */
+/* ==========================================================
+   Courses Section & Cards
+   ========================================================== */
 .courses-section {
     background: rgb(233, 235, 238);
 }
@@ -78,7 +86,142 @@ body {
     color: black;
 }
 
-/* Footer Section */
+/* ==========================================================
+   Page Header (About, Contact, Courses)
+   ========================================================== */
+.page-header {
+    background: rgb(233, 235, 238);
+    min-height: 220px;
+}
+
+.page-header p {
+    color: rgb(112, 119, 119);
+}
+
+/* ==========================================================
+   About Page
+   ========================================================== */
+
+/* Mission */
+.about-mission p {
+    line-height: 1.7;
+}
+
+.about-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+/* Stats */
+.about-stats {
+    background: rgb(233, 235, 238);
+}
+
+.stat-number {
+    color: #0967f3;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Values */
+.value-card {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    padding: 30px 25px;
+}
+
+.value-card h4 {
+    margin-bottom: 12px;
+}
+
+.value-card p {
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* Call To Action */
+.about-cta {
+    background: rgb(233, 235, 238);
+}
+
+/* ==========================================================
+   Contact Page
+   ========================================================== */
+
+/* Contact Info */
+.contact-info {
+    background-color: var(--bs-primary, #0967f3);
+    color: white;
+    padding: 30px 25px;
+}
+
+.contact-info h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li {
+    margin-bottom: 18px;
+    line-height: 1.5;
+}
+
+.contact-list i {
+    margin-right: 10px;
+}
+
+.contact-list a {
+    color: white;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    padding: 30px 25px;
+}
+
+.contact-form h3 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+    background-color: white;
+    color: black;
+    font: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #0967f3;
+    outline-offset: 1px;
+}
+
+/* ==========================================================
+   Footer Section
+   ========================================================== */
 .site-footer {
     background-color: var(--bs-primary, #0967f3);
 }
@@ -89,32 +232,45 @@ body {
     color: white;
 }
 
-/* Dark Mode Styles */
-
+/* ==========================================================
+   Dark Mode Styles
+   ========================================================== */
 body.dark-mode {
     background-color: #121212;
     color: #f8f9fa;
 }
 
+/* Navbar */
 body.dark-mode .custom-navbar {
     background-color: #1f1f1f;
 }
 
+/* Section backgrounds */
 body.dark-mode .hero-section,
-body.dark-mode .courses-section {
+body.dark-mode .courses-section,
+body.dark-mode .page-header,
+body.dark-mode .about-stats,
+body.dark-mode .about-cta {
     background-color: #181818;
 }
 
+/* Muted text */
 body.dark-mode .hero-section p,
-body.dark-mode .features p {
+body.dark-mode .features p,
+body.dark-mode .page-header p {
     color: #b0b0b0;
 }
 
+/* Headings */
 body.dark-mode .features h2,
-body.dark-mode .courses-section h2 {
+body.dark-mode .courses-section h2,
+body.dark-mode .about-mission h2,
+body.dark-mode .about-values h2,
+body.dark-mode .about-cta h2 {
     color: #ffffff;
 }
 
+/* Cards */
 body.dark-mode .card {
     background-color: #1f1f1f;
     border-color: #2c2c2c;
@@ -129,6 +285,58 @@ body.dark-mode .card-body p {
     color: #f8f9fa;
 }
 
+/* About page */
+body.dark-mode .stat-number {
+    color: #5b9bff;
+}
+
+body.dark-mode .value-card {
+    background-color: #1f1f1f;
+    border-color: #2c2c2c;
+}
+
+body.dark-mode .value-card h4,
+body.dark-mode .value-card p {
+    color: #f8f9fa;
+}
+
+/* Contact page */
+body.dark-mode .contact-info {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .contact-form {
+    background-color: #1f1f1f;
+    border-color: #2c2c2c;
+}
+
+body.dark-mode .contact-form h3,
+body.dark-mode .form-group label {
+    color: #f8f9fa;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background-color: #121212;
+    border-color: #2c2c2c;
+    color: #f8f9fa;
+}
+
+/* Footer */
 body.dark-mode .site-footer {
     background-color: #1f1f1f;
+}
+
+/* ==========================================================
+   Responsive (small screens)
+   ========================================================== */
+@media (max-width: 768px) {
+    .about-mission .col-6,
+    .about-stats .col-4,
+    .about-values .col-4,
+    .contact-section .col-4,
+    .contact-section .col-8 {
+        width: 100%;
+    }
 }
