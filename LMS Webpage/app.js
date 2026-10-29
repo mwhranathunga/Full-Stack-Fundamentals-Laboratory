@@ -1,50 +1,5 @@
 // ==========================================================
-// 1. Dynamic greeting based on time of day (Home page)
-// ==========================================================
-const greetingSpan = document.getElementById('greeting');
-
-if (greetingSpan) {
-    const hours = new Date().getHours();
-    let greeting = "";
-
-    if (hours >= 5 && hours < 12) {
-        greeting = "Good Morning, ";
-    } else if (hours >= 12 && hours < 17) {
-        greeting = "Good Afternoon, ";
-    } else {
-        greeting = "Good Evening, ";
-    }
-
-    greetingSpan.textContent = greeting;
-}
-
-// ==========================================================
-// 2. Dark mode (all pages)
-// ==========================================================
-const darkModeToggle = document.getElementById('darkModeToggle');
-const darkModeIcon = document.getElementById('darkModeIcon');
-
-// Apply theme and save the choice
-const updateTheme = (isDark) => {
-    document.body.classList.toggle('dark-mode', isDark);
-    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
-
-    if (darkModeIcon) {
-        darkModeIcon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    }
-};
-
-// Load saved preference on page load
-updateTheme(localStorage.getItem('darkMode') === 'enabled');
-
-// Toggle on button click
-darkModeToggle?.addEventListener('click', () => {
-    const isDark = !document.body.classList.contains('dark-mode');
-    updateTheme(isDark);
-});
-
-// ==========================================================
-// 3. Contact form (Contact page)
+// 1. Contact form (Contact page)
 // ==========================================================
 const contactForm = document.querySelector('.contact-form');
 
@@ -93,5 +48,36 @@ if (contactForm) {
         // Success (no server yet, so just confirm and clear the form)
         showMessage('Thank you! Your message has been sent.', false);
         contactForm.reset();
+    });
+}
+
+// ==========================================================
+// 2. Course details popup (Courses page)
+// ==========================================================
+const courseModal = document.getElementById('courseModal');
+
+if (courseModal) {
+    const modalTitle = document.getElementById('courseModalTitle');
+    const modalBody = document.getElementById('courseModalBody');
+
+    // Open the popup with the clicked course's details
+    document.querySelectorAll('.view-details-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+            modalTitle.textContent = button.dataset.title;
+            modalBody.textContent = button.dataset.description;
+            courseModal.showModal();
+        });
+    });
+
+    // Close with the X button or the Close button
+    courseModal.querySelectorAll('[data-close-modal]').forEach((button) => {
+        button.addEventListener('click', () => courseModal.close());
+    });
+
+    // Close when clicking outside the popup
+    courseModal.addEventListener('click', (event) => {
+        if (event.target === courseModal) {
+            courseModal.close();
+        }
     });
 }

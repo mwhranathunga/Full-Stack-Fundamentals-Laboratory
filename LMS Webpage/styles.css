@@ -220,6 +220,66 @@ body {
 }
 
 /* ==========================================================
+   Course Details Popup
+   ========================================================== */
+.view-details-btn {
+    cursor: pointer;
+}
+
+.course-modal {
+    border: none;
+    padding: 0;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 6px;
+    background: transparent;
+}
+
+.course-modal::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.course-modal-content {
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+}
+
+.course-modal-header,
+.course-modal-footer {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+}
+
+.course-modal-header {
+    justify-content: space-between;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.course-modal-header h5 {
+    margin: 0;
+}
+
+.course-modal-x {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.course-modal-body {
+    padding: 20px;
+}
+
+.course-modal-footer {
+    justify-content: flex-end;
+    border-top: 1px solid #dee2e6;
+}
+
+/* ==========================================================
    Footer Section
    ========================================================== */
 .site-footer {
@@ -321,6 +381,17 @@ body.dark-mode .form-group textarea {
     background-color: #121212;
     border-color: #2c2c2c;
     color: #f8f9fa;
+}
+
+/* Course popup */
+body.dark-mode .course-modal-content {
+    background-color: #1f1f1f;
+    color: #f8f9fa;
+}
+
+body.dark-mode .course-modal-header,
+body.dark-mode .course-modal-footer {
+    border-color: #2c2c2c;
 }
 
 /* Footer */
